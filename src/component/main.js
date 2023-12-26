@@ -1,4 +1,4 @@
-import Card from './card';
+
 import React, { useEffect, useState } from 'react';
 import './component.css'
 const MainComponent = () => {
@@ -20,7 +20,13 @@ const MainComponent = () => {
 
       return (
         <div className='main'>
-            <Card products={products} />
+            {products.map((product)=>(
+            <div className="card" key={product.id}>
+            <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail"></img>
+            <h2>{product.title}</h2>
+            <h4> {product.description} </h4>
+            </div>
+        ))}
 
         </div>
       )

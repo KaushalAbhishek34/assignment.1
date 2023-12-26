@@ -8,7 +8,7 @@ const Card = ({ products })=>{
             <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail"></img>
             <h2>{product.title}</h2>
             <h4> {product.description} </h4>
-            <div className="details">
+            {/* <div className="details">
             <p>Price : {product.price}</p>
             <p>Category : {product.category}</p>
             </div >
@@ -24,7 +24,7 @@ const Card = ({ products })=>{
                 {product.images.map((image,index) =>(
                     <img key={index} src={image} alt="img"></img>
                 ))}
-            </div>
+            </div> */}
         </div>
         ))}
         </>
