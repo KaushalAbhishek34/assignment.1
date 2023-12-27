@@ -7,8 +7,8 @@ const ProductDetail = ({ product, onBackClick }) => {
     <div className='product-detail'>
     <img className="product-thumbnail" src={product.thumbnail} alt="Product Thumbnail"></img>
     <div className='product-description'>
-       <h1>{product.title}</h1>
-        <p>{product.description}</p>
+       {/* <h1>{product.title}</h1> */}
+        <p className='product-title'>{product.title} ({product.description})</p>
         <p>Price: ${product.price}</p>
         <p>Discount: {product.discountPercentage}%</p>
         <p>Rating: {product.rating}</p>
