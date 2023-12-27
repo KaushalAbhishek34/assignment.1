@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './component.css'
-const MainComponent = () => {
+const ProductList = ({onProductClick}) => {
     const [products, setProducts] = useState([]);   
     
     useEffect(() => {
@@ -21,9 +21,9 @@ const MainComponent = () => {
       return (
         <div className='main'>
             {products.map((product)=>(
-            <div className="card" key={product.id}>
-            <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail"></img>
-            <h2>{product.title}</h2>
+            <div className="card" key={product.id} >
+            <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail" onClick={() => onProductClick(product)}></img>
+            <h2 onClick={() => onProductClick(product)}>{product.title}</h2>
             <h4> {product.description} </h4>
             </div>
         ))}
@@ -31,4 +31,4 @@ const MainComponent = () => {
         </div>
       )
 }
-export default MainComponent;
+export default ProductList;
