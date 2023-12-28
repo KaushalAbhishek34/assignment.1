@@ -8,7 +8,7 @@
     text-align: center;
     width: 29%;
     height: 400px;
-    background-color: ghostwhite;
+    background-color:  aliceblue;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);;
   }
 
@@ -47,6 +47,7 @@
  }
  .product-detail{
     display: flex;
+    background-color: rgb(37, 37, 37);
     
  }
  .product-description{
@@ -54,10 +55,12 @@
     height: 400px;
     font-weight: 600;
     font-size: medium;
-    color: midnightblue;
+    color: rgb(29, 29, 75);
     border: 2px solid rgb(163, 163, 163);
     margin-top: 30px; ;
     padding: 20px;
+    box-shadow: 5px 5px 10px rgb(179, 166, 166);;
+
  }
  .images{
     display: flex;
@@ -82,10 +85,12 @@
 
  }
  .buy-btn{
-   margin: 10px;
+  display: flex;
+  justify-content: space-between;
+   width: 140px;
    padding: 10px;
    font-weight: 900;
-   border-radius: 30px;
+   border-radius: 20px;
    font-size: medium;
    background-color: orange;
 

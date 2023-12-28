@@ -39,7 +39,6 @@ const ProductDetail = () => {
           <button className='buy-btn'><i className="bi bi-bag"></i> Buy Now</button>
         </div>
       </div>
-      <hr></hr>
       <div>
         <h3>More Images</h3>
         <div className="images">
