@@ -1,34 +1,22 @@
 
-import React, { useEffect, useState } from 'react';
-import './component.css'
-const ProductList = ({onProductClick}) => {
-    const [products, setProducts] = useState([]);   
-    
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch('https://dummyjson.com/products');
-            const data = await response.json();
-            setProducts(data.products);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './component.css';
 
-      return (
-        <div className='main'>
-            {products.map((product)=>(
-            <div className="card" key={product.id} >
-            <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail" onClick={() => onProductClick(product)}></img>
-            <h2 onClick={() => onProductClick(product)}>{product.title}</h2>
-            <h4> {product.description} </h4>
-            </div>
-        ))}
-
+const ProductList = ({ products }) => {
+  return (
+    <div className='main'>
+      {products.map((product) => (
+        <div className="card" key={product.id}>
+          <Link className='link-title' to={`/product/${product.id}`}>
+            <img className="thumbnail" src={product.thumbnail} alt="Product Thumbnail" />
+            <h2>{product.title}</h2>
+          </Link>
+          <h4>{product.description}</h4>
         </div>
-      )
-}
+      ))}
+    </div>
+  );
+};
+
 export default ProductList;

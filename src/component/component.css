@@ -78,7 +78,7 @@
  }
  h2:hover{
    cursor: pointer;
-   color: rgb(178, 249, 108);
+   /* color: rgb(178, 249, 108); */
 
  }
  .buy-btn{
@@ -98,4 +98,16 @@
    font-size: larger;
    font-weight: 700;
    color: black;
+ }
+ .link-title{
+  text-decoration: none;
+  color: black;
+ }
+ .Sproduct-description{
+  background-color:  aliceblue;
+  height: 400px;
+  width: 600px;
+  border: 2px solid rgb(163, 163, 163);
+    margin-top: 30px; ;
+    padding: 20px;
  }

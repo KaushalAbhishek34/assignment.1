@@ -1,27 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductList from './component/Productlist';
-import ProductDetail from './component/ProductDetail'
+import ProductDetail from './component/ProductDetail';
 import './App.css';
 
-function App() {
-  const [selectedProduct, setSelectedProduct] = useState(null);
+const App = () => {
+  const [products, setProducts] = useState([]);
 
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://dummyjson.com/products');
+        const data = await response.json();
+        setProducts(data.products);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-  const handleBackButtonClick = () => {
-    setSelectedProduct(null);
-  };
+    fetchData();
+  }, []);
+
   return (
-    <>
-    {selectedProduct ?(
-      <ProductDetail product={selectedProduct} onBackClick={handleBackButtonClick} />) : (
-        <ProductList onProductClick={handleProductClick} />
-      )
-    }
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProductList products={products} />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
