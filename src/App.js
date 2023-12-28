@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ProductList from './component/Productlist';
-import ProductDetail from './component/ProductDetail';
+import ProductList from './component/list';
+import ProductDetail from './component/detail';
 import './App.css';
 
 const App = () => {

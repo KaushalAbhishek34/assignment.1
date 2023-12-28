@@ -3,9 +3,7 @@ const Shimmer = () => {
         <> 
         <div className='product-detail'>
             <img className="product-thumbnail" src= "" alt="Product Thumbnail"></img>
-        <div className='Sproduct-description'>
-
-            </div>
+        <div className='Sproduct-description'></div>
         </div>
         <hr></hr>
         <div>
