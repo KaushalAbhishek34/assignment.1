@@ -9,8 +9,9 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        const response = await fetch(`https://expressapi-production-c32a.up.railway.app/products/${id}`);
         const data = await response.json();
+        data.images = JSON.parse(data.images);
         setProduct(data);
       } catch (error) {
         console.error('Error fetching product details:', error);

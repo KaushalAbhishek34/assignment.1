@@ -10,7 +10,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://dummyjson.com/products');
+        const response = await fetch('https://expressapi-production-c32a.up.railway.app/products');
         const data = await response.json();
         setProducts(data.products);
       } catch (error) {
